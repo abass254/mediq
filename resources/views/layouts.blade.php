@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- PAGE TITLE HERE -->
-    <title>Mediqu Laravel | @yield('page-title', 'Dashboard')</title>
+    <title>Mediq Planner | @yield('page-title', 'Dashboard')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Add required CSS files here -->

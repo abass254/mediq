@@ -10,6 +10,7 @@ use App\Models\DoctorSpeciality;
 use App\Models\Facility;
 use App\Models\FacilityDoctor;
 use App\Models\FacilityLocation;
+use Auth;
 use Hash;
 class DoctorController extends Controller
 {
@@ -20,7 +21,20 @@ class DoctorController extends Controller
     }
 
     public function doctorProfile(){
-        return view('doctor.profile');
+
+        $facility = Facility::where('id', Auth::user()->facility)->first();
+       // $fac_id = FacilityDoctor::where('fd_doc', Auth::user()->id)->first();
+       // $fac = Facility::where('id', $fac_id->fd_fac)->first();
+     //   $fac_desc = $fac->fc_desc;
+        $staff = User::where('facility', $facility->id)->get();
+       // return $staff;
+
+
+        $doctor = DoctorSpeciality::where('dc_id', Auth::user()->id)->get();
+
+       // return $doctor;
+
+        return view('doctor.profile', compact('staff', 'facility','doctor'));
     }
 
     public function saveFacility(Request $request){
@@ -94,7 +108,7 @@ class DoctorController extends Controller
     public function viewFacilities(){
         $fac = Facility::all();
         $data = [];
-
+    
      //   return FacilityLocation::all();
 
         foreach ($fac as $f){
@@ -103,7 +117,7 @@ class DoctorController extends Controller
                 'fac_name' => $f->fc_name,
                 'fac_email' => $f->fc_email,
                 'fac_phone' => $f->fc_phone,
-                'fac_location' => $loc->fc_location,
+                'fac_location' => $loc->fc_location ?? "NAIROBI",
                 'fac_status' => $f->fc_status == 1 ? 'active' : 'suspended',
                 'fac_theme' => $f->fc_status == 1 ? 'success' : 'danger'
             ];

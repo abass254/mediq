@@ -30,7 +30,7 @@ Route::middleware(['auth'])->group(function () {
         
     // });
 
-    Route::middleware(['auth', 'role:secretary'])->group(function () {
+    Route::middleware(['auth', 'role:secretary|admin'])->group(function () {
         Route::get('/register-facility', [\App\Http\Controllers\DoctorController::class, 'registerDoctor'])->name('register-doctor');
         Route::post('/save-facility', [\App\Http\Controllers\DoctorController::class, 'saveFacility'])->name('facility-register');
         Route::get('/facilities', [\App\Http\Controllers\DoctorController::class, 'viewFacilities'])->name('facilities');

@@ -3,11 +3,10 @@
 <html lang="en" class="h-100">
 
 
-<!-- Mirrored from mediqu.dexignzone.com/laravel/demo/page-register by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Oct 2024 09:29:08 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
 <head>
 	<!-- PAGE TITLE HERE -->
-	<title>Mediqu Laravel | Page Register</title>
+	<title>Mediqu Planner | Login Page</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -65,7 +64,7 @@
                             </div>
                             <div class="mb-4 position-relative">
                                 <label class="mb-1 form-label">Password</label>
-                                <input name="password" type="password" id="dz-password" class="form-control" value="">
+                                <input name="password" type="password" id="dz-password" class="form-control" placeholder="*******">
                             </div>
                         </span>                        
                         <div class="text-center mt-4">
@@ -73,7 +72,7 @@
                         </div>
                     </form>
                     <div class="new-account mt-3">
-                        <p>Dont have an Account? Please contact us at <a class="text-danger" href="mailto: ufanisi.strategies@gmail.com">ufanisi.strategies@gmail.com</a></p>
+                        <p>Dont have an Account? Please contact us at <a class="text-danger text-center" href="mailto: ufanisi.strategies@gmail.com">ufanisi.strategies@gmail.com</a></p>
                     </div>
                 </div>
             </div>

@@ -21,6 +21,9 @@ class User extends Authenticatable implements JWTSubject
     const ROLE_SECRETARY = 'secretary';
 
 
+    //age, gender, photo, facility:999 is ufanisi,phone,bio, cover_photo
+
+
     public function hasRole($role)
     {
         return $this->role === $role;
@@ -36,6 +39,13 @@ class User extends Authenticatable implements JWTSubject
         'email',
         'password',
         'role',
+        'age',
+        'gender',
+        'facility',
+        'is_admin',
+        'bio',
+        'photo',
+        'phone'
     ];
 
     /**

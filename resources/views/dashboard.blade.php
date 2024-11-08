@@ -24,7 +24,7 @@
 						</div>
 						<div class="col-6">
 							<div class="bgl-primary rounded p-3">
-								<h4 class="mb-0">Age: 24</h4>
+								<h4 class="mb-0">Age: {{ Auth::user()->age ?? "24"  }}</h4>
 								<small>Years Old</small>
 							</div>
 						</div>

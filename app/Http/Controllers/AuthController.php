@@ -38,6 +38,11 @@ class AuthController extends Controller
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
             'role'=> $request->input('role'),
+            'age'=> $request->input('age'),
+            'gender'=> $request->input('gender'),
+            'facility'=> $request->input('facility'),
+            'bio'=> $request->input('bio'),
+            'phone'=> $request->input('phone'),
         ]);
 
 
@@ -184,7 +189,7 @@ class AuthController extends Controller
                 case 'patient':
                     return redirect()->route('doctors-profile');
                 default:
-                    return redirect('/'); 
+                    return redirect()->route('doctors-profile'); 
             }
         }
 

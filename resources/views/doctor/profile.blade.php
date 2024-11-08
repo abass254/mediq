@@ -47,7 +47,7 @@
 							<ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item" role="presentation"><a href="#personal-settings" data-bs-toggle="tab" class="nav-link active" aria-selected="true" role="tab">Personal Settings</a>
 								</li>
-								@if(Auth::user()->role == 'doctor')
+								@if(Auth::user()->is_admin == '1')
 								<li class="nav-item" role="presentation"><a href="#my-posts" data-bs-toggle="tab" class="nav-link show" aria-selected="false" role="tab" tabindex="-1">Facility Staff</a>
 								</li>
 								<li class="nav-item" role="presentation"><a href="#about-me" data-bs-toggle="tab" class="nav-link" aria-selected="false" role="tab" tabindex="-1">Services Offered</a>
@@ -119,18 +119,14 @@
 									<div class="profile-about-me">
 										<div class="pt-4 border-bottom-1 pb-3">
 											<h4 class="text-primary">Brief Description</h4>
-											<p class="mb-2">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence was created for the bliss of souls like mine.I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
-											<p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
+											<p class="mb-2">{{ $facility->fc_desc ?? 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence was created for the bliss of souls like mine.I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.'}} </p>
 										</div>
 									</div>
 									<div class="profile-skills mb-5">
 										<h4 class="text-primary mb-2">Specialities</h4>
-										<a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">PhysioTherapy</a>
-										<a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">Dashboard</a>
-										<a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">Photoshop</a>
-										<a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">Bootstrap</a>
-										<a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">Responsive</a>
-										<a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">Crypto</a>
+										<!-- @foreach($doctor as $doc)
+										<a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">{{ $doc->dc_speciality }}</a>
+										@endforeach -->
 									</div>
 								</div>
 								<div id="personal-settings" class="tab-pane fade active show" role="tabpanel">
